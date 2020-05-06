@@ -1,12 +1,10 @@
 pipeline {
          agent any
-         environment { 
-        username = 'Jenkins'
-             }
+        
          stages {
                  stage('One') {
                  steps {
-                          echo 'Hi, this is Zulaikha from edureka'.${username}
+                          echo "Hi, this is Zulaikha from edureka"
                      echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} node ${env.NODE_NAME}"
                           
                  }
