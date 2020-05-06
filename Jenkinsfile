@@ -20,11 +20,17 @@ pipeline {
                             branch "master"
                        }
                  }
-                 steps {
+                          steps{
+                          
+                          steps {
                       when {
               expression {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS' 
               }
+             }
+                                   steps{
+                                   echo "helo"
+                                   }
             }
             steps {
                 echo "when condition test"
