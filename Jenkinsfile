@@ -21,7 +21,14 @@ pipeline {
                        }
                  }
                  steps {
-                       echo "Hello"
+                      when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
+            steps {
+                echo "when condition test"
+            }
                  }
                  }
                  stage('Four') {
